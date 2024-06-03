@@ -1,0 +1,117 @@
+@import url('styles.css');
+
+.section-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-timer-container {
+    box-shadow: 1px 1px 10px #c7c8d3;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.section-timer input {
+    width: 272px;
+    padding: 8px 16px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    transition:
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-timer input:hover,
+.section-timer input:focus {
+    border-color: #000;
+}
+
+.section-timer input:active {
+    color: #000;
+    border-color: #4e75ff;
+}
+
+.section-timer input:disabled {
+    color: #808080;
+    border-color: #808080;
+}
+
+.section-timer button {
+    padding: 8px 16px;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #4e75ff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    transition:
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-timer button:hover,
+.section-timer button:focus {
+    color: #fff;
+    background-color: #6c8cff;
+}
+
+.section-timer button:disabled {
+    color: #989898;
+    background-color: #cfcfcf;
+}
+
+.timer {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.value {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.label {
+    text-transform: uppercase;
+}
+
+.flatpickr-day:hover,
+.flatpickr-day:focus {
+    background-color: #c1c1c1 !important;
+    border-color: #c1c1c1 !important;
+}
+
+.today {
+    border-color: #4e75ff !important;
+}
+
+
+.flatpickr-month select,
+.flatpickr-month input,
+.flatpickr-time input,
+.flatpickr-time span {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+}
+
+.flatpickr-weekdaycontainer span {
+    font-weight: 500 !important;
+    color: #2e2f42 !important;
+}
