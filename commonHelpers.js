@@ -1,26 +1,26 @@
-import{i as u,S as p}from"./assets/vendor-8c59ed88.js";(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&l(c)}).observe(document,{childList:!0,subtree:!0});function e(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function l(t){if(t.ep)return;t.ep=!0;const s=e(t);fetch(t.href,s)}})();function d(a){const i=new URLSearchParams({key:"44228657-622a5a522e8285bbc9d7fdb17",q:`${a}`,image_type:"photo",orientation:"horizontal",safesearch:!0});return fetch(`https://pixabay.com/api/?${i}`).then(e=>{if(!e.ok)throw new Error(e.status);return e.json()})}function h(a){const i=[];return a.forEach(e=>{i.push(`
+import{i as d,S as h}from"./assets/vendor-8c59ed88.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))m(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const c of r.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&m(c)}).observe(document,{childList:!0,subtree:!0});function t(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function m(i){if(i.ep)return;i.ep=!0;const r=t(i);fetch(i.href,r)}})();function f(a){const e=new URLSearchParams({key:"44228657-622a5a522e8285bbc9d7fdb17",q:`${a}`,image_type:"photo",orientation:"horizontal",safesearch:!0});return fetch(`https://pixabay.com/api/?${e}`).then(t=>{if(!t.ok)throw new Error(t.status);return t.json()})}function g(a){const e=[];return a.forEach(t=>{e.push(`
             <li class="main-item">
-                <a class="main-link" href="${e.largeImageURL}" onclick="return false;">
-                  <img class="main-image" src="${e.webformatURL}" alt="${e.tags}" />
+                <a class="main-link" href="${t.largeImageURL}" onclick="return false;">
+                  <img class="main-image" src="${t.webformatURL}" alt="${t.tags}" height="200" width="200" />
                   <div class="main-characteristics">
                     <div class="main-characteristics-element">
                       <p class="main-characteristics-type">Likes</p>
-                      <p class="main-characteristics-value">${e.likes}</p>
+                      <p class="main-characteristics-value">${t.likes}</p>
                     </div>
                     <div class="main-characteristics-element">
                       <p class="main-characteristics-type">Views</p>
-                      <p class="main-characteristics-value">${e.views}</p>
+                      <p class="main-characteristics-value">${t.views}</p>
                     </div>
                     <div class="main-characteristics-element">
                       <p class="main-characteristics-type">Comments</p>
-                      <p class="main-characteristics-value">${e.comments}</p>
+                      <p class="main-characteristics-value">${t.comments}</p>
                     </div>
                     <div class="main-characteristics-element">
                       <p class="main-characteristics-type">Downloads</p>
-                      <p class="main-characteristics-value">${e.downloads}</p>
+                      <p class="main-characteristics-value">${t.downloads}</p>
                     </div>
                 </div>
               </a>
             </li>
-            `)}),i}const f=document.querySelector(".open-search"),r=document.querySelector(".main-form"),n=document.querySelector(".main-form-input"),g=document.querySelector(".main-list");let m;function o(){r.classList.toggle("isOpen"),r.reset()}f.addEventListener("click",()=>{o(),n.focus()});document.addEventListener("keyup",a=>{r.classList.contains("isOpen")&&a.key==="Escape"&&o()});r.addEventListener("submit",a=>{if(a.preventDefault(),!n.value){u.warning({message:"The input field cannot be empty!",position:"topRight",theme:"dark",backgroundColor:"#ef4040"});return}m=n.value,o(),d(m).then(i=>{if(i.hits.length==0)throw u.warning({message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight",theme:"dark",backgroundColor:"#ef4040"}),new Error("Cannot found");console.log(i.hits),g.insertAdjacentHTML("beforeend",h(i.hits).join(""));var e=new p(".main-list a",{captionsData:"alt"});e.refresh()}).catch(i=>console.log("ERROR:",i))});
+            `)}),e}const y=document.querySelector(".open-search"),s=document.querySelector(".main-form"),l=document.querySelector(".main-form-input"),n=document.querySelector(".main-list"),v=document.querySelector(".main-loader");let p;function u(){s.classList.toggle("isOpen"),s.reset()}function o(){v.classList.toggle("loader")}y.addEventListener("click",()=>{u(),l.focus()});document.addEventListener("keyup",a=>{s.classList.contains("isOpen")&&a.key==="Escape"&&u()});s.addEventListener("submit",a=>{if(a.preventDefault(),!l.value){d.warning({message:"The input field cannot be empty!",position:"topRight",theme:"dark",backgroundColor:"#ef4040"});return}p=l.value,u(),o(),n.querySelectorAll("li")&&n.querySelectorAll("li").forEach(e=>{e.remove()}),f(p).then(e=>{if(e.hits.length==0)throw d.warning({message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight",theme:"dark",backgroundColor:"#ef4040"}),o(),new Error("Cannot found");o(),n.insertAdjacentHTML("beforeend",g(e.hits).join(""));var t=new h(".main-list a",{captionsData:"alt"});t.refresh()}).catch(e=>console.log("ERROR:",e))});
 //# sourceMappingURL=commonHelpers.js.map
